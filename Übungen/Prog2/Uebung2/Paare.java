@@ -1,5 +1,7 @@
 package Uebung2;
 
+import java.util.Objects;
+
 public class Paare <E,Z>{
 
     private E erstes;
@@ -33,4 +35,13 @@ public class Paare <E,Z>{
                 ", zweites=" + zweites +
                 '}';
     }
-}
+
+    public boolean equals(Object o){
+        if(! (o instanceof Paare<?, ?> p))
+            return false;
+        if (!Objects.equals ( erstes, p.erstes )) return false;
+        if (!Objects.equals( zweites, p.zweites )) return false;
+
+        return true;
+        }
+    }
