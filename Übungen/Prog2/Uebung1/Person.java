@@ -1,10 +1,10 @@
 package Uebung1;
 
-public abstract class Person {
+public class Person {
 
 
-    private final String Name;
-    private final int Geburtsjahr;
+    private  String Name;
+    private  int Geburtsjahr;
 
 
     //Konstrukteur
@@ -12,6 +12,15 @@ public abstract class Person {
         this.Name = name;
         this.Geburtsjahr = geburtsjahr;
     }
+
+    public Person(Person person) {
+        Name = person.Name;
+        Geburtsjahr = person.Geburtsjahr;
+    }
+
+    public Person() {
+    }
+
 
     public int getGeburtsjahr() {
         return Geburtsjahr;
