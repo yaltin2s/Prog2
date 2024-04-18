@@ -1,3 +1,5 @@
+package Uebung1;
+
 public abstract class Person {
 
 

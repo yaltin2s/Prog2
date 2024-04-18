@@ -1,3 +1,5 @@
+package Uebung1;
+
 public class Stud extends Person{
 
     private  static int zaeler= 100;

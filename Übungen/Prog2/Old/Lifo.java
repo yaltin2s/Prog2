@@ -1,3 +1,5 @@
+package Old;
+
 public class Lifo{
  Integer[] array; // storage
  int size = 0; // current size

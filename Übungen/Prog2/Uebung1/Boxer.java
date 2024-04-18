@@ -1,3 +1,5 @@
+package Uebung1;
+
 public class Boxer extends Person {
 
     private double Gewicht ;
