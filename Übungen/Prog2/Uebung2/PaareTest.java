@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class PaareTest {
     Paare<String, Integer> Paare1, Paare2;
@@ -19,7 +19,7 @@ public class PaareTest {
     @Test
     public void equalsTest() {
         assertEquals(Paare1, Paare1);
-        assertTrue(Paare1.equals(Paare2));
+        assertEquals ( Paare1, Paare2 );
     }
 
     @Test

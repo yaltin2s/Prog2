@@ -4,11 +4,11 @@ import Uebung1.Person;
 
 public class Kind extends Person {
 
-    private static final Person person = null;
+    private static  Person person = null;
     private Paare<Person,Person> eltern;
 
-    public Kind() {
-        super (person);
+    public Kind(String Name, int gebdatum ) {
+        super (Name,gebdatum);
     }
 
     public Kind(Paare<Person, Person> eltern) {
