@@ -34,9 +34,9 @@ public class Person {
     public boolean equals (Object object){
         //if(this == object) return true;
        // if (object ==null||getClass ()!=object.getClass ()) return  false;
-        if(object instanceof Person){
-        Person person = (Person) object;
-            return Geburtsjahr == person.Geburtsjahr && object.equals ( Name );        }
+        if(object instanceof Person person){
+            return Geburtsjahr == person.Geburtsjahr && object.equals ( Name );
+        }
         return false;
     }
 

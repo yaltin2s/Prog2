@@ -2,7 +2,7 @@ package Uebung3;
 
 
 public class DynArray<T> {
-    private static int startGroesse = 2; // Länge des Arrays (initial)
+    private static final int startGroesse = 2; // Länge des Arrays (initial)
 
     private T[] array;
     private int size; // Anzahl der "belegten" Plätze
@@ -54,8 +54,7 @@ public class DynArray<T> {
     private void increase() {
         // Verlängerung des Arrays bei Bedarf
         T[] neu = (T[]) new Object[array.length*2];
-        for (int i = 0; i < size; i++)
-            neu[i] = array[i];
+        if (size >= 0) System.arraycopy ( array, 0, neu, 0, size );
         array = neu;
     }
 

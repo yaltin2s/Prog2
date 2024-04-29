@@ -2,7 +2,7 @@ package Old;
 
 public class Lifo{
  Integer[] array; // storage
- int size = 0; // current size
+ int size; // current size
     public Lifo(int s) {
          array = new Integer[s];
         size = 0;
