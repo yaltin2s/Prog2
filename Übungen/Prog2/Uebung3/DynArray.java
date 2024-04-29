@@ -6,7 +6,7 @@ public class DynArray<T> {
 
     private T[] array;
     private int size; // Anzahl der "belegten" Plätze
-    private int capacity;
+
 
 
     @SuppressWarnings("unchecked")
@@ -109,7 +109,7 @@ public class DynArray<T> {
     @SuppressWarnings("unchecked")
     private void decrease() {
         if (size <= array.length / 4) {
-            int newCapacity = Math.max ( capacity, array.length / 2 );
+            int newCapacity = Math.max ( size, array.length / 2 );
             T[] newArray = (T[]) new Object[newCapacity];
             System.arraycopy ( array, 0, newArray, 0, size );
             array = newArray;
