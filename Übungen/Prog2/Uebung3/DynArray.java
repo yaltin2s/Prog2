@@ -38,9 +38,13 @@ public class DynArray<T> {
 
     public void add(T e) {
         // hinzufügen neuer Elemente
-        if(size >= array.length)
+        if(size >= array.length) {
             increase();
-        array[size++] = e;
+        }
+        for (int i = size; i < 0; i--) {
+            array[i+1]= array[i];
+        }
+        array[0] = e;
     }
 
     public String toString() {
@@ -95,8 +99,12 @@ public class DynArray<T> {
 
     // d) boolean contains(T e)
     public boolean contains(T e) {
-        for (T element : array) {
-            if (element.equals(e)) {
+        for (int i = 0; i < size; i++) {
+            T element = array[i];
+            if (e == null && element == null) {
+                return true;
+            }
+            if (element != null && element.equals(e)) {
                 return true;
             }
         }

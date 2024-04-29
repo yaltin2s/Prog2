@@ -32,9 +32,9 @@ class ModulTest {
             System.out.println("Belegte Module von Clara: " + studi3.belegt());
 
             // Teilnehmerlisten der Module anzeigen
-            System.out.println("Teilnehmer in Mathematik: " + mathe.getTeilnehmer());
-            System.out.println("Teilnehmer in Informatik: " + informatik.getTeilnehmer());
-            System.out.println("Teilnehmer in Physik: " + physik.getTeilnehmer());
+            System.out.println("Teilnehmer in Mathematik: " + mathe.getTeilnehmer ());
+            System.out.println("Teilnehmer in Informatik: " + informatik.getTeilnehmer ());
+            System.out.println("Teilnehmer in Physik: " + physik.getTeilnehmer ());
         }
     }
 

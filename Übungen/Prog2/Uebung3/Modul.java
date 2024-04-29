@@ -4,14 +4,15 @@ import Uebung1.Stud;
 
 public class Modul {
 
-    private String bezeichnung;
-    private int  Ects;
-    private DynArray<Stud> teilnehmer = new DynArray<Stud>();
+    private final String bezeichnung;
+    private final int  Ects;
+    private  DynArray<Stud> teilnehmer;
 
 
     public Modul(String bezeichnung,int Ects){
         this.bezeichnung=bezeichnung;
         this.Ects=Ects;
+        teilnehmer = new DynArray<Stud>();
     }
 
     @Override
@@ -30,7 +31,7 @@ public class Modul {
         teilnehmer.add ( S );
     }
 
-    public int getStudentsanzahl(){
+    public int getStudentsAnzahl(){
         return teilnehmer.size ();
     }
 
@@ -44,7 +45,9 @@ public class Modul {
 
     // Methoden zum Anmelden und Abmelden von Studis
     public void anmelden(Stud studi) {
-        teilnehmer.add(studi);
+        if (!teilnehmer.contains(studi)) {
+            teilnehmer.add(studi);
+        }
     }
 
     public void abmelden(Stud studi) {

@@ -14,6 +14,8 @@ public class Stud extends Person{
     public Stud(String name, int geburtsjahr) {
         super ( name, geburtsjahr );
         this.Matrikelnummer = zaeler++;
+        this.belegteModule = new DynArray<>(); // Initialisierung von belegteModule
+
     }
 
     public int getMatrikelnummer() {
@@ -29,8 +31,10 @@ public class Stud extends Person{
     }
 
     public void anmelden(Modul m){
-        belegteModule.add(m);
-        m.anmelden(this);
+        if (!belegteModule.contains(m)) {
+            belegteModule.add(m);
+            m.anmelden(this);
+        }
 
     }
 
