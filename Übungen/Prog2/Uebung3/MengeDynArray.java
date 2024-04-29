@@ -2,7 +2,7 @@ package Uebung3;
 
 import Uebung2.Menge;
 
-public class MengeDynArray implements Menge {
+public class MengeDynArray<T> implements Menge {
 
     private DynArray<Object> menge =new DynArray<> ();
 

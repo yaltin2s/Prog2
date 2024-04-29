@@ -44,10 +44,10 @@ public class DynArray<T> {
     }
 
     public String toString() {
-        String  s = "";
+        StringBuilder s = new StringBuilder ();
         for (int i = 0; i < size; i++)
-            s = s + array[i] + "\t";
-        return s;
+            s.append ( array[i] ).append ( "\t" );
+        return s.toString ();
     }
 
     @SuppressWarnings("unchecked")
@@ -63,8 +63,7 @@ public class DynArray<T> {
     protected void show() {
         System.out.println("size\t length\t Array-Inhalt");
         System.out.print(size + "\t" + array.length + "\t");
-        for (int i = 0; i < array.length; i++)
-            System.out.print(array[i] + "\t");
+        for (T t : array) System.out.print ( t + "\t" );
         System.out.println();
     }
 

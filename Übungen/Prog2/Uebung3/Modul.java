@@ -41,4 +41,13 @@ public class Modul {
     public int getEcts() {
         return Ects;
     }
+
+    // Methoden zum Anmelden und Abmelden von Studis
+    public void anmelden(Stud studi) {
+        teilnehmer.add(studi);
+    }
+
+    public void abmelden(Stud studi) {
+        teilnehmer.delete (studi);
+    }
 }

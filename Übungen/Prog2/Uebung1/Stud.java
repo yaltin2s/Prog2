@@ -1,11 +1,14 @@
 package Uebung1;
 
+import Uebung3.DynArray;
+import Uebung3.MengeDynArray;
 import Uebung3.Modul;
 
 public class Stud extends Person{
 
     private  static int zaeler= 100;
     private final int Matrikelnummer;
+    private DynArray<Modul> belegteModule;
 
 
     public Stud(String name, int geburtsjahr) {
@@ -25,9 +28,19 @@ public class Stud extends Person{
         return false;
     }
 
-    public void anmelden(Modul M){
+    public void anmelden(Modul m){
+        belegteModule.add(m);
+        m.anmelden(this);
 
+    }
 
+    public DynArray<Modul> belegt() {
+        return belegteModule;
+    }
+
+    public void abmelden(Modul m) {
+        belegteModule.delete (m);
+        m.abmelden(this);
     }
 
     @Override
