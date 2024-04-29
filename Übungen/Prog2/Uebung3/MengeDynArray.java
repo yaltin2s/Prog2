@@ -18,7 +18,7 @@ public class MengeDynArray implements Menge {
 
     @Override
     public Object get() {
-        return menge.toString ();
+        return menge;
     }
 
     @Override
