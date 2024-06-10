@@ -86,15 +86,21 @@ public class DVL<T>{
     }
     boolean contains( T v){
         if(isEmpty ()) return false;
-        listenElement elem =first;
-        while (elem.next != null){
-            if(elem.value == v){
-                return true;
-            }
-            elem=elem.next;
-        }
+        listenElement e =first;
 
-        return false;
+//        while (elem.next != null){
+//            if(elem.value == v){
+//                return true;
+//            }
+//            elem=elem.next;
+//        }
+//
+//        return false;
+
+        while (!e.value.equals(v) && e.next != null) {
+            e = e.next;
+        }
+        return e.value.equals(v);
     }
     void delete (T v){
         if (isEmpty ()|| !contains ( v )) return;
