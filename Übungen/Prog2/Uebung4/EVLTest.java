@@ -64,7 +64,7 @@ class EVLTest {
         assertFalse(uut.contains(10));
         assertTrue(uut.isEmpty());
 
-        //Exception Test
+        //Exception Test************************************
         assertThrows ( NoSuchElementException.class,()-> uut.getFirst () );
         assertThrows ( NoSuchElementException.class,()-> uut.getLast () );
     }

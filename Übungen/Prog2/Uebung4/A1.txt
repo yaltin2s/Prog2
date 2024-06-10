@@ -1,0 +1,5 @@
+1. evl[->*A] *A[first: null]
+2. s[->*AB *B[name: "Susi", gebJahr: 2002]
+3. b[->*C] *C[name: "Ben", gebJahr: 1990, gewicht:85.6]
+4. evl[first: ->*D] *D[value: ->*A, next: null]
+5. evl[first: ->*E] *E[value: ->*C, next: ->*D] *D[value: ->*B, next: null]
