@@ -1,14 +1,13 @@
 package Uebung1;
 
 import Uebung3.DynArray;
-import Uebung3.MengeDynArray;
 import Uebung3.Modul;
 
 public class Stud extends Person{
 
     private  static int zaeler= 100;
     private final int Matrikelnummer;
-    private DynArray<Modul> belegteModule;
+    private final DynArray<Modul> belegteModule;
 
 
     public Stud(String name, int geburtsjahr) {

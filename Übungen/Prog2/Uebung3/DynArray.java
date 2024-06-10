@@ -36,13 +36,17 @@ public class DynArray<T> {
         return array[pos];
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public void add(T e) {
         // hinzufügen neuer Elemente
         if(size >= array.length) {
             increase();
+            return;
         }
-        for (int i = size; i < 0; i--) {
-            array[i+1]= array[i];
+        int i = size;
+        while (i < 0) {
+            array[i + 1] = array[i];
+            i--;
         }
         array[0] = e;
     }
@@ -83,7 +87,7 @@ public class DynArray<T> {
     }
 
     //Aufgabe 3.2 (b)
-    public void remove() {
+    private void remove() {
         remove(0);
     }
 
@@ -110,6 +114,7 @@ public class DynArray<T> {
         }
         return false;
     }
+
 
     // e) void decrease()
     @SuppressWarnings("unchecked")

@@ -34,9 +34,9 @@ class DynArrayTest {
 
     @Test
     void testBounds() {
-        assertThrows(IndexOutOfBoundsException.class, ()->{da.get(10);});
-        assertThrows(IndexOutOfBoundsException.class, ()->{da.get(-3);});
-        assertThrows(IndexOutOfBoundsException.class, ()->{sa.set(1, "Hey");});
+        assertThrows(IndexOutOfBoundsException.class, ()-> da.get(10) );
+        assertThrows(IndexOutOfBoundsException.class, ()-> da.get(-3) );
+        assertThrows(IndexOutOfBoundsException.class, ()-> sa.set(1, "Hey") );
     }
 
     @Test
@@ -50,4 +50,7 @@ class DynArrayTest {
         assertEquals(s, da.size());
     }
 
+    @Test
+    void remove() {
+    }
 }

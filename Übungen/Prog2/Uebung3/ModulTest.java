@@ -4,7 +4,7 @@ import Uebung1.Stud;
 
 class ModulTest {
 
-        public static void main(String[] args) {
+        public static void main() {
             // Module erstellen
             Modul mathe = new Modul("Mathematik", 5);
             Modul informatik = new Modul("Informatik", 10);
