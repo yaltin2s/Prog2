@@ -2,7 +2,11 @@ package Uebung4;
 
 import java.util.NoSuchElementException;
 
-public class dvl<T>{
+/*
+     Double verkettete Liste
+*/
+
+public class DVL<T>{
     private int size;
     listenElement first;
     listenElement last;
