@@ -27,14 +27,17 @@ public class DVL<T>{
 
         return first==null;
     }
-    T getFirst(){
-
+    T getFirst()throws NoSuchElementException{
+        if (isEmpty()) throw new NoSuchElementException ("Liste leer");
         return first.value;
     }
     T getLast() throws NoSuchElementException{
         if (isEmpty()) throw new NoSuchElementException ("Liste leer");
 
         return last.value;
+    }
+    public int size() {
+        return this.size;
     }
 
     void insert( T v){
@@ -88,19 +91,19 @@ public class DVL<T>{
         if(isEmpty ()) return false;
         listenElement e =first;
 
-//        while (elem.next != null){
-//            if(elem.value == v){
-//                return true;
-//            }
-//            elem=elem.next;
-//        }
-//
-//        return false;
-
-        while (!e.value.equals(v) && e.next != null) {
-            e = e.next;
+        while (e.next != null){
+            if(e.value == v){
+                return true;
+            }
+            e=e.next;
         }
+
         return e.value.equals(v);
+
+//        while (!e.value.equals(v) && e.next != null) {
+//            e = e.next;
+//        }
+//        return e.value.equals(v);
     }
     void delete (T v){
         if (isEmpty ()|| !contains ( v )) return;

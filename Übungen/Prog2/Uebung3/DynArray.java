@@ -1,7 +1,9 @@
 package Uebung3;
 
 
-public class DynArray<T> {
+import java.util.Iterator;
+
+public class DynArray<T> implements Iterable<T>{
     private static final int startGroesse = 2; // Länge des Arrays (initial)
 
     private T[] array;
@@ -36,19 +38,22 @@ public class DynArray<T> {
         return array[pos];
     }
 
+    public T getLast(){
+        return array[size-1];
+    }
+
     @SuppressWarnings("DataFlowIssue")
     public void add(T e) {
         // hinzufügen neuer Elemente
-        if(size >= array.length) {
+//        int i = size;
+//        while (i < 0) {
+//            array[i + 1] = array[i];
+//            i--;
+//        }
+//        array[0] = e;
+        if(size >= array.length)
             increase();
-            return;
-        }
-        int i = size;
-        while (i < 0) {
-            array[i + 1] = array[i];
-            i--;
-        }
-        array[0] = e;
+        array[size++] = e;
     }
 
     public String toString() {
@@ -84,6 +89,10 @@ public class DynArray<T> {
             }
             array[--size] = null;
         }
+    }
+
+    public void removeLast(){
+        this.remove (size-1);
     }
 
     //Aufgabe 3.2 (b)
@@ -126,5 +135,37 @@ public class DynArray<T> {
             array = newArray;
         }
 
+    }
+
+
+
+    private class DynArrayIterator implements Iterator<T> {
+
+        /* Instanzvariablen */
+
+        int i;
+
+        /* Konstruktoren */
+
+        DynArrayIterator() {
+            i = 0;
+        }
+
+        /* Instanzmethoden */
+
+        @Override
+        public boolean hasNext() {
+            return i < size;
+        }
+
+        @Override
+        public T next() {
+            return array[i++];
+        }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new DynArrayIterator();  // Innere Klasse: Elementklasse
     }
 }

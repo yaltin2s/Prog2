@@ -1,10 +1,7 @@
 package Uebung4;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.*;
 import java.util.NoSuchElementException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DVLTest {
@@ -24,7 +21,7 @@ public class DVLTest {
 
     @Test
     void getFirst() {
-        uut.insert ( 5 );
+        uut.insert ( 5 );//[1,4,5]
         uut.insert ( 4 );
         uut.insert ( 1 );
         assertEquals ( 1,uut.getFirst () );
@@ -40,8 +37,9 @@ public class DVLTest {
 
     @Test
     void insert() {
-        uut.insert ( 6 );
-        assertEquals ( 6,uut.getFirst () );
+        assertEquals ( 0,uut.size () );
+        uut.insert ( 6 );//
+        assertEquals ( 1,uut.size ());
     }
 
     @Test
@@ -61,6 +59,7 @@ public class DVLTest {
         assertEquals ( 1,uut.getFirst () );
         uut.removeFirst ();
         assertEquals ( 4,uut.getFirst () );
+
     }
 
     @Test
@@ -75,12 +74,13 @@ public class DVLTest {
 
     @Test
     void contains() {
-        uut.insert ( 5 );
+        uut.insert ( 5 );//[1,4,5]
         uut.insert ( 4 );
         uut.insert ( 1 );
         assertTrue ( uut.contains ( 4 ) );
         assertTrue ( uut.contains ( 5 ) );
         assertTrue ( uut.contains ( 1 ) );
+        assertFalse ( uut.contains ( 7 ) );
     }
 
     @Test
@@ -88,7 +88,14 @@ public class DVLTest {
         uut.insert ( 5 );
         uut.insert ( 4 );
         uut.insert ( 1 );
+        assertEquals ( 3,uut.size () );
         uut.delete ( 4 );
         assertFalse ( uut.contains ( 4 ) );
+        assertEquals ( 2,uut.size () );
+    }
+    @Test
+    void Exception() {
+        assertThrows(NoSuchElementException.class, ()->uut.getFirst());
+        assertThrows(NoSuchElementException.class, ()->uut.getLast());
     }
 }

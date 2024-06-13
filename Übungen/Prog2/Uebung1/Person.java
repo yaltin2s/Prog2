@@ -20,7 +20,9 @@ public class Person {
 
     public Person() {
     }
-
+    public Person(String name) {
+        this.Name = name;
+    }
 
     public int getGeburtsjahr() {
         return Geburtsjahr;
