@@ -45,8 +45,7 @@ public class Person {
     @Override
     public String toString() {
         return "(" +
-                "Name='" + Name + "  " +
-                ", Geburtsjahr=" + Geburtsjahr +
+                "Name='" + Name  +
                 ')';
     }
 }

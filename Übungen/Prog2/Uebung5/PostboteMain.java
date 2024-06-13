@@ -1,9 +1,8 @@
-package Uebung6;
+package Uebung5;
 
 import Uebung1.Person;
 
 public class PostboteMain {
-    /* Klassenmethoden */
 
     public static void main(String[] args) {
 
@@ -29,9 +28,9 @@ public class PostboteMain {
         };
         print(people);
     }
-
+String s ="";
     public static <T> void print(T[] array) {
-        Postbote<T> p = new Postbote(array);
+        Postbote<T> p = new Postbote (array);
         while (p.hasNext()) {
             System.out.println(p.next());
         }
