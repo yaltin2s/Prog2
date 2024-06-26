@@ -13,6 +13,7 @@ public class Klammerstruktur {
         paareDynArray.add ( new Paare<> ( "[", "]" ) );
         paareDynArray.add ( new Paare<> ( "begin", "end" ) );
         paareDynArray.add ( new Paare<> ( "start", "stop" ) );
+
         //Stack Definition ***********************************
 
         Stapel<String> stack = new StapelEVL<> ();
@@ -34,12 +35,13 @@ public class Klammerstruktur {
     }
 
     private static void test(String satz) {
-        System.out.println(check (satz.split ( " " )));
+        System.out.println(check (satz.split ( " " ) ));
     }
 
     public static void main(String[] args) {
-        test ( "(String)" );
-        test ( "(jhdmhsds start mjmhfdh stop fsdfdfd)" );
+        test ( "( String )  " );
+        test ( " ( " );
+        test ( "( jhdmhsds start mjmhfdh stop fsdfdfd )" );
         test ( "( a + b ) * a − b ) ist nicht korrekt" );
     }
 }

@@ -9,7 +9,7 @@ public class StapelEVL<T> implements Stapel<T> {
 
     /* Instanzvariablen */
 
-    private EVL<T> elements;
+    private final EVL<T> elements;
 
     /* Konstruktoren */
 
