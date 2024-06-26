@@ -52,4 +52,17 @@ class StapelDynArrTest {
         uut.pop ();
         assertEquals ( 1,uut.size () );
     }
+
+    @Test
+    void Test(){
+        //isEmpty(Push)
+        uut.push ( 5 );
+        assertFalse ( uut.isEmpty () );
+        //top(push)
+        assertEquals ( 5,uut.top () );
+        uut.pop ();
+        assertTrue ( uut.isEmpty () );
+        //top(pop(push))
+        assertThrows ( NoSuchElementException.class,()-> uut.top () );
+    }
 }

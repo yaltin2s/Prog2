@@ -1,15 +1,17 @@
 package Uebung4;
 
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /*
      Einfache verkettete Liste
 */
 
-public class EVL<T> {
+public class EVL<T> implements Iterable<T> {
     private ListenElem first;
     private ListenElem last;
     private int size;
+
 
     // innere Klasse
     class ListenElem {
@@ -130,5 +132,29 @@ public class EVL<T> {
             tmp = tmp.next;
         }
         return s;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<>() {	// Innere Klasse: Anonyme Klasse
+
+            /* Instanzvariablen */
+
+            ListenElem cursor = first;
+
+            /* Instanzmethoden */
+
+            @Override
+            public boolean hasNext() {
+                return cursor != null;
+            }
+
+            @Override
+            public T next() {
+                T value = cursor.value;
+                cursor = cursor.next;
+                return value;
+            }
+        };
     }
 }
