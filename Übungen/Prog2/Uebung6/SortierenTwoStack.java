@@ -1,8 +1,10 @@
 package Uebung6;
 
+import java.util.Arrays;
+
 public class SortierenTwoStack {
 
-    public void Sort (int[] a){
+    public static void sort(int[] a){
         Stapel<Integer> up = new StapelEVL<> ();
         Stapel<Integer> down = new StapelEVL<> ();
 
@@ -25,5 +27,19 @@ public class SortierenTwoStack {
                 up.push( i );
             }
         }
+        while (!up.isEmpty()) {
+            down.push(up.top());
+            up.pop();
+        }
+        for (int i = 0; i < a.length; i++) {
+            a[i] = down.top();
+            down.pop();
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr = {3, 1, 4, 2, 5};
+        System.out.println("Vorher:  " + Arrays.toString(arr));
+        sort (arr);
+        System.out.println("Nachher: " + Arrays.toString(arr));
     }
 }
