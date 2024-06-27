@@ -1,13 +1,15 @@
 package Uebung7;
 
+import Uebung4.EVL;
+
 import java.util.Iterator;
 
-public class SchlangeAlsRingpuffe <T> implements Schlange<T> {
+public class SchlangeAlsEVL <T> implements Schlange<T> {
 
-    private final Ringpuffer<T> elements;
+    private EVL<T> elements;
 
-    public SchlangeAlsRingpuffe(int c) {
-        this.elements = new RingpufferFIFO<> ( c );
+    public SchlangeAlsEVL() {
+        this.elements = new EVL<> ();
     }
 
     @Override
@@ -22,19 +24,18 @@ public class SchlangeAlsRingpuffe <T> implements Schlange<T> {
 
     @Override
     public T front() {
-        return elements.get ();
+        return elements.getFirst ();
     }
 
     @Override
     public void enqueue(T e) {
-        elements.add(  e );
+        elements.append ( e );
     }
 
     @Override
     public void dequeue() {
-    elements.remove ();
+        elements.removeFirst ();
     }
-
 
     @Override
     public Iterator iterator() {

@@ -3,13 +3,13 @@ package Uebung7;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class RingbufferFIFO<T> extends Ringpuffer<T>{
+public class RingpufferFIFO<T> extends Ringpuffer<T>{
 
     private T[] arr;
     private int p;
 
     @SuppressWarnings("unchecked")
-    public RingbufferFIFO(int capacity) throws IllegalArgumentException {
+    public RingpufferFIFO(int capacity) throws IllegalArgumentException {
         super ( capacity );
         this.arr = (T[]) new Object[capacity];
         this.p= 0;

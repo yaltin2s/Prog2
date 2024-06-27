@@ -18,7 +18,7 @@ public abstract class Ringpuffer<T> implements Iterable<T> {
         return capacity;
     }
 
-    public int Size() {
+    public int size() {
         return size;
     }
     public boolean isEmpty (){
