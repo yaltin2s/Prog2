@@ -19,7 +19,7 @@ public class Rechteck {
     }
     @Override
     public String toString() {
-        return laenge + "x" + breite + ", Umfang: " + umfang() + ", Fläche: " + flaeche();
+        return laenge + "x" + breite + ", Umfang: " + umfang() + ", Fläche: " + flaeche()+ ";;";
     }
 
 }
