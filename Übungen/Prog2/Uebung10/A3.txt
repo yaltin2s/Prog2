@@ -1,0 +1,13 @@
+Der Fehler in dem Code wird zur Laufzeit verursacht, weil durch die Verwendung von raw types die Typensicherheit von Generics umgangen wird.
+Dies führt dazu, dass zur Laufzeit ein ClassCastException auftritt. Lassen Sie uns die Fragen der Reihe nach beantworten.
+
+Warum wird der Fehler nicht schon zur Compilezeit erkannt?
+Der Fehler wird nicht zur Compilezeit erkannt, weil der Einsatz von raw types (nicht generische Typen)
+die Typensicherheit der Generics umgeht. Raw types erlauben es, einen generischen Typ zu verwenden,
+ohne einen spezifischen Typparameter anzugeben, was die Überprüfung der Typen zur Compilezeit verhindert.
+In deinem Beispiel wird rawBox als raw type deklariert, was bedeutet, dass jede Art von Objekt als Inhalt gesetzt werden kann.
+Das führt dazu, dass der Fehler erst zur Laufzeit auftritt, wenn versucht wird, ein String-Objekt in einen Integer umzuwandeln.
+
+Korrigiere den Fehler mit Hilfe des Wildcards <?>.
+Der Einsatz von Wildcards kann helfen, die Typensicherheit zu gewährleisten und die Möglichkeit des Fehlerausschlusses zu ermöglichen.
+Eine Möglichkeit, den Fehler zu korrigieren, besteht darin, rawBox als Box<?> zu deklarieren.
