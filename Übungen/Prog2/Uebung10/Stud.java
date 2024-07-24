@@ -8,7 +8,7 @@ public class Stud extends Person {
 
     /* Instanzvariablen */
 
-    private int matrikelnr;
+    private final int matrikelnr;
 
     /* Konstruktoren */
 

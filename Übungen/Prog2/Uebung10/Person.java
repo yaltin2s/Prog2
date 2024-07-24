@@ -4,8 +4,8 @@ public abstract class Person {
 
     /* Instanzvariablen */
 
-    private String name;
-    private int geburtsjahr;
+    private final String name;
+    private final int geburtsjahr;
 
     /* Konstruktoren */
 

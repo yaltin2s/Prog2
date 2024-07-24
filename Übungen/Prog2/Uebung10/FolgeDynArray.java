@@ -8,7 +8,7 @@ public class FolgeDynArray<T> implements Folge<T> {
 
     /* Instanzvariablen */
 
-    private DynArray<T> elements;
+    private final DynArray<T> elements;
 
     /* Konstruktoren */
 
